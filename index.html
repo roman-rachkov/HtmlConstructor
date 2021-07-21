@@ -23,89 +23,239 @@
   <script src="js/main.js" defer></script>
 
   <script>
-    const options = {
-      title: 'Ведьмак',
-      backgroundImage: 'witcher/background.jpg',
-      backgroundColor: '#141218',
-      header: {
-        logo: 'witcher/logo.png',
-        socials: [
-          {
-            title: 'Twitter',
-            link: '#',
-            img: 'witcher/social/twitter.svg'
-          },
-          {
-            title: 'Instagram',
-            link: '#',
-            img: 'witcher/social/instagram.svg'
-          },
-          {
-            title: 'Facebook',
-            link: '#',
-            img: 'witcher/social/facebook.svg'
-          },
+    
+    const options = [
+      {
+        title: 'Ведьмак',
+        backgroundImage: 'witcher/background.jpg',
+        backgroundColor: '#141218',
+        header: {
+          logo: 'witcher/logo.png',
+          socials: [
+            {
+              title: 'Twitter',
+              link: '#',
+              img: 'witcher/social/twitter.svg'
+            },
+            {
+              title: 'Instagram',
+              link: '#',
+              img: 'witcher/social/instagram.svg'
+            },
+            {
+              title: 'Facebook',
+              link: '#',
+              img: 'witcher/social/facebook.svg'
+            },
 
-        ],
-        menu: [
-          {
-            link: '#',
-            title: 'Описание',
-          }, {
-            link: '#',
-            title: 'Трейлер',
-          }, {
-            link: '#',
-            title: 'Отзывы',
-          },
-        ]
+          ],
+          menu: [
+            {
+              link: '#',
+              title: 'Описание',
+            }, {
+              link: '#',
+              title: 'Трейлер',
+            }, {
+              link: '#',
+              title: 'Отзывы',
+            },
+          ]
+        },
+        main: {
+          genre: '2019,фэнтези',
+          rating: 7,
+          description: 'Ведьмак Геральт, мутант и убийца чудовищ, на своей верной лошади по кличке Плотва путешествует по Континенту. За тугой мешочек чеканных монет этот мужчина избавит вас от всякой настырной нечисти — хоть от чудищ болотных, оборотней и даже заколдованных принцесс.',
+          trailer: 'https://www.youtube.com/watch?v=P0oJqfLzZzQ',
+          episodes: [
+            {
+              img: 'witcher/series/series-1.jpg',
+              title: 'Начало конца',
+              subTitle: 'Серия №1',
+            }, {
+              img: 'witcher/series/series-2.jpg',
+              title: 'Четыре марки',
+              subTitle: 'Серия №2',
+            }, {
+              img: 'witcher/series/series-3.jpg',
+              title: 'Предательская луна',
+              subTitle: 'Серия №3',
+            }, {
+              img: 'witcher/series/series-4.jpg',
+              title: 'Банкеты, ублюдки и похороны',
+              subTitle: 'Серия №4',
+            },
+          ]
+        },
+        footer: {
+          copyright: '© 2020 The Witcher. All right reserved.',
+          menu: [
+            {
+              title: 'Privacy Policy',
+              link: '#'
+            },
+            {
+              title: 'Terms of Service',
+              link: '#'
+            },
+            {
+              title: 'Legal',
+              link: '#'
+            },
+          ],
+        }
       },
-      main: {
-        genre: '2019,фэнтези',
-        rating: 7,
-        description: 'Ведьмак Геральт, мутант и убийца чудовищ, на своей верной лошади по кличке Плотва путешествует по Континенту. За тугой мешочек чеканных монет этот мужчина избавит вас от всякой настырной нечисти — хоть от чудищ болотных, оборотней и даже заколдованных принцесс.',
-        trailer: 'https://www.youtube.com/watch?v=P0oJqfLzZzQ',
-        episodes: [
-          {
-            img: 'witcher/series/series-1.jpg',
-            title: 'Начало конца',
-            subTitle: 'Серия №1',
-          }, {
-            img: 'witcher/series/series-2.jpg',
-            title: 'Четыре марки',
-            subTitle: 'Серия №2',
-          }, {
-            img: 'witcher/series/series-3.jpg',
-            title: 'Предательская луна',
-            subTitle: 'Серия №3',
-          }, {
-            img: 'witcher/series/series-4.jpg',
-            title: 'Банкеты, ублюдки и похороны',
-            subTitle: 'Серия №4',
-          },
-        ]
-      },
-      footer: {
-        copyright: '© 2020 The Witcher. All right reserved.',
-        menu: [
-          {
-            title: 'Privacy Policy',
-            link: '#'
-          },
-          {
-            title: 'Terms of Service',
-            link: '#'
-          },
-          {
-            title: 'Legal',
-            link: '#'
-          },
-        ],
-      }
-    };
+      {
+        title: 'Черная вдова',
+        backgroundImage: 'black-widow/background.jpg',
+        backgroundColor: '#fff',
+        color: '#424242',
+        header: {
+          logo: 'black-widow/logo.png',
+          socials: [
+            {
+              title: 'Twitter',
+              link: '#',
+              img: 'black-widow/social/twitter.svg'
+            },
+            {
+              title: 'Instagram',
+              link: '#',
+              img: 'black-widow/social/instagram.svg'
+            },
+            {
+              title: 'Facebook',
+              link: '#',
+              img: 'black-widow/social/facebook.svg'
+            },
 
+          ],
+          menu: [
+            {
+              link: '#',
+              title: 'Описание',
+            }, {
+              link: '#',
+              title: 'Трейлер',
+            }, {
+              link: '#',
+              title: 'Отзывы',
+            },
+          ]
+        },
+        main: {
+          genre: '2021,боевик',
+          rating: 6,
+          description: 'Наташе Романофф предстоит лицом к лицу встретиться со своим прошлым. Чёрной Вдове придется вспомнить о том, что было в её жизни задолго до присоединения к команде Мстителей, и узнать об опасном заговоре, в который оказываются втянуты её старые знакомые — Елена, Алексей (известный как Красный Страж) и Мелина.',
+          trailer: 'https://www.youtube.com/watch?v=PaPXXQX8R1U',
+          // episodes: [
+          //   {
+          //     img: 'witcher/series/series-1.jpg',
+          //     title: 'Начало конца',
+          //     subTitle: 'Серия №1',
+          //   }, {
+          //     img: 'witcher/series/series-2.jpg',
+          //     title: 'Четыре марки',
+          //     subTitle: 'Серия №2',
+          //   }, {
+          //     img: 'witcher/series/series-3.jpg',
+          //     title: 'Предательская луна',
+          //     subTitle: 'Серия №3',
+          //   }, {
+          //     img: 'witcher/series/series-4.jpg',
+          //     title: 'Банкеты, ублюдки и похороны',
+          //     subTitle: 'Серия №4',
+          //   },
+          // ]
+        },
+        footer: {
+          backgroundColor: '#fff',
+          copyright: '© 2021 Black Widow. All right reserved.',
+          menu: [
+            {
+              title: 'Privacy Policy',
+              link: '#'
+            },
+            {
+              title: 'Terms of Service',
+              link: '#'
+            },
+            {
+              title: 'Legal',
+              link: '#'
+            },
+          ],
+        }
+      },
+    ];
+
+    /*
+        const options = {
+          title: 'Черная вдова',
+          backgroundImage: 'black-widow/background.jpg',
+          backgroundColor: '#fff',
+          color: '#424242',
+          header: {
+            logo: 'black-widow/logo.png',
+            socials: [
+              {
+                title: 'Twitter',
+                link: '#',
+                img: 'black-widow/social/twitter.svg'
+              },
+              {
+                title: 'Instagram',
+                link: '#',
+                img: 'black-widow/social/instagram.svg'
+              },
+              {
+                title: 'Facebook',
+                link: '#',
+                img: 'black-widow/social/facebook.svg'
+              },
+    
+            ],
+            menu: [
+              {
+                link: '#',
+                title: 'Описание',
+              }, {
+                link: '#',
+                title: 'Трейлер',
+              }, {
+                link: '#',
+                title: 'Отзывы',
+              },
+            ]
+          },
+          main: {
+            genre: '2021,боевик',
+            rating: 6,
+            description: 'Наташе Романофф предстоит лицом к лицу встретиться со своим прошлым. Чёрной Вдове придется вспомнить о том, что было в её жизни задолго до присоединения к команде Мстителей, и узнать об опасном заговоре, в который оказываются втянуты её старые знакомые — Елена, Алексей (известный как Красный Страж) и Мелина.',
+            trailer: 'https://www.youtube.com/watch?v=PaPXXQX8R1U',
+          },
+          footer: {
+            backgroundColor: '#fff',
+            copyright: '© 2021 Black Widow. All right reserved.',
+            menu: [
+              {
+                title: 'Privacy Policy',
+                link: '#'
+              },
+              {
+                title: 'Terms of Service',
+                link: '#'
+              },
+              {
+                title: 'Legal',
+                link: '#'
+              },
+            ],
+          }
+        };
+        */
     document.addEventListener('DOMContentLoaded', function () {
-      new MoviePromo('body', options);
+      new PromoPage('body', options);
     });
   </script>
 </body>

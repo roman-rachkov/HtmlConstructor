@@ -2,9 +2,9 @@ class MoviePromo {
 
 	options;
 
-	constructor(selector, _options) {
+	constructor(selector, _options, multiplePage = false) {
 		this.options = _options;
-		this.movieConstructor(selector);
+		this.movieConstructor(selector, multiplePage);
 	}
 
 	getElement = (tagName, classNames, attributes, innerText) => {
@@ -215,12 +215,22 @@ class MoviePromo {
 
 		container.append(content);
 		element.append(container);
+
+		if (params.footer.backgroundColor) {
+			element.style.backgroundColor = params.footer.backgroundColor;
+		}
+
 		return element;
 	}
 
-	movieConstructor = (selector) => {
-
-		const app = document.querySelector(selector);
+	movieConstructor = (selector, container) => {
+		let app;
+		if (container) {
+			console.log(container);
+			app = document.getElementById(container.id).appendChild(this.getElement('div', selector));
+		} else {
+			app = document.querySelector(selector);
+		}
 		app.classList.add('body-app');
 
 		if (this.options.backgroundImage) {
@@ -229,6 +239,10 @@ class MoviePromo {
 
 		if (this.options.backgroundColor) {
 			app.style.backgroundColor = this.options.backgroundColor;
+		}
+
+		if (this.options.color) {
+			app.style.color = this.options.color;
 		}
 
 		this.options.title = this.options.title ?? 'Promo Page';
@@ -246,10 +260,65 @@ class MoviePromo {
 			app.append(this.createFooter());
 		}
 	};
+
 };
 
 
+class PromoPage {
+	options;
+	constructor(selector, _options) {
+		this.options = _options;
+		if (Array.isArray(this.options)) {
+			this.createMultiplePage(selector);
+		} else {
+			new MoviePromo('body', this.options);
+		}
+	}
+
+	createMultiplePage = (selector) => {
+
+		const container = document.querySelector(selector).appendChild(document.createElement('div'));
+		container.classList.add('page-container');
+		const wrapper = container.appendChild(document.createElement('div'));
+		wrapper.classList.add('swiper-wrapper');
+
+		for (const options in this.options) {
+			const slide = wrapper.appendChild(document.createElement('div'));
+			slide.id = 'container' + options;
+			slide.classList.add('swiper-slide');
+			new MoviePromo('page', this.options[options], slide);
+		}
+
+		const prevBtn = document.createElement('div');
+		prevBtn.classList.add('swiper-button-prev')
+		container.append(prevBtn);
+		const nextBtn = document.createElement('div');
+		nextBtn.classList.add('swiper-button-next')
+		container.append(nextBtn);
+	}
+	
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+	new Swiper('.page-container', {
+		loop: true,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+
+		},
+		// direction: 'vertical'
+		// breakpoints: {
+		// 	320: {
+		// 		slidesPerView: 1,
+		// 		spaceBetween: 20
+		// 	},
+		// 	541: {
+		// 		slidesPerView: 2,
+		// 		spaceBetween: 40
+		// 	}
+		// }
+	});
 	new Swiper('.swiper-container', {
 		loop: true,
 		navigation: {
