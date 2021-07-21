@@ -226,7 +226,6 @@ class MoviePromo {
 	movieConstructor = (selector, container) => {
 		let app;
 		if (container) {
-			console.log(container);
 			app = document.getElementById(container.id).appendChild(this.getElement('div', selector));
 		} else {
 			app = document.querySelector(selector);
