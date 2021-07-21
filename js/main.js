@@ -264,6 +264,7 @@ class MoviePromo {
 
 
 class PromoPage {
+	static instance;
 	options;
 	constructor(selector, _options) {
 		this.options = _options;
@@ -272,7 +273,10 @@ class PromoPage {
 		} else {
 			new MoviePromo('body', this.options);
 		}
+		self.instance = this;
 	}
+
+	static getInstance = () => self.instance;
 
 	createMultiplePage = (selector) => {
 
@@ -294,30 +298,29 @@ class PromoPage {
 		const nextBtn = document.createElement('div');
 		nextBtn.classList.add('swiper-button-next')
 		container.append(nextBtn);
+		this.setTitle(0);
 	}
-	
+
+
+	setTitle(page) {
+		document.querySelector('title').innerText = this.options[page].title;
+	}
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	new Swiper('.page-container', {
+	let mySwiper = new Swiper('.page-container', {
 		loop: true,
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
 
 		},
-		// direction: 'vertical'
-		// breakpoints: {
-		// 	320: {
-		// 		slidesPerView: 1,
-		// 		spaceBetween: 20
-		// 	},
-		// 	541: {
-		// 		slidesPerView: 2,
-		// 		spaceBetween: 40
-		// 	}
-		// }
 	});
+
+	mySwiper.on('slideChange', () => {
+		PromoPage.getInstance().setTitle(mySwiper.realIndex);
+	});
+
 	new Swiper('.swiper-container', {
 		loop: true,
 		navigation: {
