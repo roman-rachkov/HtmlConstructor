@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ведьмак - официальный сайт сериала</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/swiper.min.js" defer></script>
+  <script src="youtube-modal/index.js" defer></script>
+
+</head>
+
+<body>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    const options = {
+      title: 'Ведьмак',
+      backgroundImage: 'witcher/background.jpg',
+      backgroundColor: '#141218',
+      header: {
+        logo: 'witcher/logo.png',
+        socials: [
+          {
+            title: 'Twitter',
+            link: '#',
+            img: 'witcher/social/twitter.svg'
+          },
+          {
+            title: 'Instagram',
+            link: '#',
+            img: 'witcher/social/instagram.svg'
+          },
+          {
+            title: 'Facebook',
+            link: '#',
+            img: 'witcher/social/facebook.svg'
+          },
+
+        ],
+        menu: [
+          {
+            link: '#',
+            title: 'Описание',
+          }, {
+            link: '#',
+            title: 'Трейлер',
+          }, {
+            link: '#',
+            title: 'Отзывы',
+          },
+        ]
+      },
+      main: {
+        genre: '2019,фэнтези',
+        rating: 7,
+        description: 'Ведьмак Геральт, мутант и убийца чудовищ, на своей верной лошади по кличке Плотва путешествует по Континенту. За тугой мешочек чеканных монет этот мужчина избавит вас от всякой настырной нечисти — хоть от чудищ болотных, оборотней и даже заколдованных принцесс.',
+        trailer: 'https://www.youtube.com/watch?v=P0oJqfLzZzQ',
+        episodes: [
+          {
+            img: 'witcher/series/series-1.jpg',
+            title: 'Начало конца',
+            subTitle: 'Серия №1',
+          }, {
+            img: 'witcher/series/series-2.jpg',
+            title: 'Четыре марки',
+            subTitle: 'Серия №2',
+          }, {
+            img: 'witcher/series/series-3.jpg',
+            title: 'Предательская луна',
+            subTitle: 'Серия №3',
+          }, {
+            img: 'witcher/series/series-4.jpg',
+            title: 'Банкеты, ублюдки и похороны',
+            subTitle: 'Серия №4',
+          },
+        ]
+      },
+      footer: {
+        copyright: '© 2020 The Witcher. All right reserved.',
+        menu: [
+          {
+            title: 'Privacy Policy',
+            link: '#'
+          },
+          {
+            title: 'Terms of Service',
+            link: '#'
+          },
+          {
+            title: 'Legal',
+            link: '#'
+          },
+        ],
+      }
+    };
+
+    new MoviePromo('body', options);
+  </script>
+</body>
+
+</html>
