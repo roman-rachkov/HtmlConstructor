@@ -1,7 +1,9 @@
 # HtmlConstructor
 
-First prototype HTML constructor
+Прототип простого лэндинг конструктора  для промо-страниц фильмов
 
-For edit use options on index.hml
+написан на нативном JS
 
-throw array of objects with settings for create multipage.
+DEMO https://roman-rachkov.github.io/HtmlConstructor/
+
+Для запуска ничего не требуется, статичный HTML
